@@ -8,7 +8,7 @@ const mode = process.env.NODE_ENV;
 
 module.exports = {
   mode,
-  entry: './src/scripts/index.js',
+  entry: './src/scripts/index.jsx',
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
