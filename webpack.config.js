@@ -1,13 +1,13 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
+const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
+
 const mode = process.env.NODE_ENV;
 
-console.log(mode);
-
 module.exports = {
-  mode: mode,
+  mode,
   entry: './src/scripts/index.js',
   output: {
     filename: '[name].[contenthash].js',
@@ -32,12 +32,14 @@ module.exports = {
       template: './src/index.html',
       favicon: './src/images/favicon.png',
     }),
+    new ESLintPlugin(),
+    new StylelintPlugin(),
   ],
   module: {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       {
         test: /\.js$/,
