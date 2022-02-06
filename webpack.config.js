@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const mode = process.env.NODE_ENV;
 
@@ -30,6 +31,7 @@ module.exports = {
       template: './src/index.html',
       favicon: './src/images/favicon.png',
     }),
+    new ESLintPlugin(),
   ],
   module: {
     rules: [
