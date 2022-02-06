@@ -1,5 +1,4 @@
-import { createLogger } from './logger/logger';
-import '../styles/index.scss';
+import createLogger from './logger/logger';
 import '../styles/index.scss';
 import Preview from '../images/preview.jpg';
 
@@ -8,7 +7,7 @@ const logger = createLogger();
 logger.log('Test log');
 logger.error('Error log');
 
-console.log('logger.getLogs() :>> ', logger.getLogs());
+// console.log('logger.getLogs() :>> ', logger.getLogs());
 
 const img = document.createElement('IMG');
 

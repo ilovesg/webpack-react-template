@@ -1,4 +1,4 @@
-export const createLogger = (name) => {
+export default function createLogger(name) {
   const logs = [];
 
   return {
@@ -13,5 +13,5 @@ export const createLogger = (name) => {
     getLogs() {
       return logs;
     },
-  }
-};
+  };
+}

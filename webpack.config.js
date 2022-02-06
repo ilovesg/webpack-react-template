@@ -1,13 +1,11 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
+
 const mode = process.env.NODE_ENV;
 
-console.log(mode);
-
 module.exports = {
-  mode: mode,
+  mode,
   entry: './src/scripts/index.js',
   output: {
     filename: '[name].[contenthash].js',
@@ -37,7 +35,7 @@ module.exports = {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       {
         test: /\.js$/,
