@@ -1,8 +1,9 @@
 import React from 'react';
+import './app.scss';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       Greetings from React!
     </div>
   );
