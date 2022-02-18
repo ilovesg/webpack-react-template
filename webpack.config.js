@@ -8,7 +8,7 @@ const mode = process.env.NODE_ENV;
 
 module.exports = {
   mode,
-  entry: './src/scripts/index.js',
+  entry: './src/scripts/index.jsx',
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
@@ -42,13 +42,10 @@ module.exports = {
         loader: 'html-loader',
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
         },
       },
       {
@@ -84,6 +81,12 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
+    ],
+  },
+  resolve: {
+    extensions: [
+      '.js',
+      '.jsx',
     ],
   },
 };
