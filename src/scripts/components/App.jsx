@@ -32,29 +32,36 @@ function App() {
 
   return (
     <div className="app">
-      <span>{cash}</span>
-      <button type="button" onClick={() => addCash(+prompt())}>Add cash</button>
-      <button type="button" onClick={() => getCash(+prompt())}>Get cash</button>
-      <button type="button" onClick={() => addCustomer(prompt())}>Add customer</button>
-      <button type="button" onClick={() => dispatch(fetchCustomersAction())}>Add customers from remote server</button>
-      {customers.length > 0
-        ? (
-          <ul>
-            {customers.map((customer) => (
-              <li key={customer.id}>
-                {customer.name}
-                <button type="button" onClick={() => removeCustomer(customer.id)}>
-                  ×
-                </button>
-              </li>
-            ))}
-          </ul>
-        )
-        : (
-          <div>
-            No customers found.
-          </div>
-        )}
+      <h1>Webpack-React starter template</h1>
+      <div className="cash">
+        <h2>Cash</h2>
+        <div>{cash}</div>
+        <button type="button" className="btn" onClick={() => addCash(+prompt())}>Add cash</button>
+        <button type="button" className="btn" onClick={() => getCash(+prompt())}>Get cash</button>
+      </div>
+      <div className="customers">
+        <h2>Customers</h2>
+        <button type="button" className="btn" onClick={() => addCustomer(prompt())}>Add customer</button>
+        <button type="button" className="btn" onClick={() => dispatch(fetchCustomersAction())}>Add customers from remote server</button>
+        {customers.length > 0
+          ? (
+            <ol>
+              {customers.map((customer) => (
+                <li key={customer.id}>
+                  <span className="customers__name">{customer.name}</span>
+                  <button type="button" onClick={() => removeCustomer(customer.id)}>
+                    ×
+                  </button>
+                </li>
+              ))}
+            </ol>
+          )
+          : (
+            <div>
+              No customers found.
+            </div>
+          )}
+      </div>
     </div>
   );
 }
