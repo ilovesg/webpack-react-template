@@ -1,3 +1,14 @@
 .app {
-  font-size: 24px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.btn {
+  margin-right: 5px;
+}
+
+.customers {
+  &__name {
+    margin-right: 5px;
+  }
 }
